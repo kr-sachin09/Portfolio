@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const desktopNavLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("main section[id]");
 
-  // Toggle mobile navigation drawer
+  // 1. Mobile Navigation Drawer Toggle
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener("click", () => {
       const isExpanded = mobileMenuBtn.getAttribute("aria-expanded") === "true";
@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
       menuIconClose.classList.toggle("hidden");
     });
 
-    // Close mobile menu automatically when a link is clicked
     mobileNavLinks.forEach((link) => {
       link.addEventListener("click", () => {
         mobileMenuBtn.setAttribute("aria-expanded", "false");
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Highlight active navigation link based on scroll position
+  // 2. Active Section Scroll Spy
   if (sections.length > 0 && desktopNavLinks.length > 0) {
     const observerOptions = {
       root: null,
@@ -51,5 +50,77 @@ document.addEventListener("DOMContentLoaded", () => {
     }, observerOptions);
 
     sections.forEach((section) => sectionObserver.observe(section));
+  }
+
+  // 3. Contact Form Client-Side UI Validation & Simulated Submission
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+    const nameError = document.getElementById("name-error");
+    const emailError = document.getElementById("email-error");
+    const messageError = document.getElementById("message-error");
+    const submitBtn = document.getElementById("submit-btn");
+    const formStatus = document.getElementById("form-status");
+
+    const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    const setFieldError = (inputEl, errorEl, hasError) => {
+      if (!inputEl || !errorEl) return;
+      inputEl.classList.toggle("input-error", hasError);
+      errorEl.classList.toggle("hidden", !hasError);
+      inputEl.setAttribute("aria-invalid", String(hasError));
+    };
+
+    // Clear field error on user input
+    [
+      [nameInput, nameError],
+      [emailInput, emailError],
+      [messageInput, messageError],
+    ].forEach(([inputEl, errorEl]) => {
+      if (inputEl) {
+        inputEl.addEventListener("input", () => {
+          setFieldError(inputEl, errorEl, false);
+          if (formStatus) formStatus.classList.add("hidden");
+        });
+      }
+    });
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const isNameInvalid = !nameInput.value.trim();
+      const isEmailInvalid = !isValidEmail(emailInput.value.trim());
+      const isMessageInvalid = !messageInput.value.trim();
+
+      setFieldError(nameInput, nameError, isNameInvalid);
+      setFieldError(emailInput, emailError, isEmailInvalid);
+      setFieldError(messageInput, messageError, isMessageInvalid);
+
+      if (isNameInvalid || isEmailInvalid || isMessageInvalid) {
+        return;
+      }
+
+      // Simulate sending state in UI
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      formStatus.classList.add("hidden");
+
+      setTimeout(() => {
+        contactForm.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+        formStatus.textContent =
+          "Thank you. Your message has been recorded (UI demo).";
+        formStatus.classList.remove("hidden");
+      }, 700);
+    });
+  }
+
+  // 4. Populate Footer Copyright Year
+  const currentYearEl = document.getElementById("current-year");
+  if (currentYearEl) {
+    currentYearEl.textContent = String(new Date().getFullYear());
   }
 });

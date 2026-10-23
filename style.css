@@ -99,3 +99,17 @@ img.empty-img-placeholder[src=""]::after {
   left: 0;
   color: #a8a29e; /* stone-400 */
 }
+
+/* Minimalist bottom-border form inputs */
+.form-input {
+  border-bottom: 1px solid #d6d3d1; /* stone-300 */
+  transition: border-color 0.25s ease;
+}
+
+.form-input:focus {
+  border-bottom-color: #1c1917; /* stone-900 */
+}
+
+.form-input.input-error {
+  border-bottom-color: #b91c1c; /* red-700 */
+}
