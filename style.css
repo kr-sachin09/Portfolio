@@ -69,3 +69,33 @@ img.empty-img-placeholder[src=""]::after {
   color: #a8a29e; /* stone-400 */
   text-align: center;
 }
+
+/* Project card subtle border & image transition */
+.project-card figure {
+  transition: border-color 0.3s ease;
+}
+
+.project-card:hover figure {
+  border-color: #78716c; /* stone-500 */
+}
+
+.project-card figure img:not([src=""]) {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover figure img:not([src=""]) {
+  transform: scale(1.02);
+}
+
+/* Minimalist indicator before each skill list item */
+.skill-item {
+  position: relative;
+  padding-left: 0.875rem;
+}
+
+.skill-item::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #a8a29e; /* stone-400 */
+}
