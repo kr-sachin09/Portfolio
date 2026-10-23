@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Insert Your Name] — Portfolio</title>
+
+  <!-- Google Fonts: Inter (Sans) & Instrument Serif (Editorial Display) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-stone-50 text-stone-900 antialiased selection:bg-stone-900 selection:text-stone-50">
+
+  <!-- Header & Navigation -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-stone-50/90 backdrop-blur-sm border-b border-stone-200/80 transition-all duration-300">
+    <nav class="max-w-6xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between" aria-label="Main Navigation">
+      
+      <!-- Brand / Name Placeholder -->
+      <a href="#" class="text-lg font-medium tracking-tight text-stone-900 hover:opacity-70 transition-opacity">
+        [Insert Your Name]
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="hidden md:flex items-center space-x-10 text-sm font-normal text-stone-600">
+        <li>
+          <a href="#about" class="nav-link hover:text-stone-900 transition-colors">About</a>
+        </li>
+        <li>
+          <a href="#projects" class="nav-link hover:text-stone-900 transition-colors">Projects</a>
+        </li>
+        <li>
+          <a href="#skills" class="nav-link hover:text-stone-900 transition-colors">Skills</a>
+        </li>
+        <li>
+          <a href="#contact" class="nav-link hover:text-stone-900 transition-colors">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="md:hidden inline-flex items-center justify-center p-2 text-stone-700 hover:text-stone-900 focus:outline-none"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Toggle navigation menu"
+      >
+        <span id="menu-icon-open" class="text-xs uppercase tracking-widest font-medium">Menu</span>
+        <span id="menu-icon-close" class="hidden text-xs uppercase tracking-widest font-medium">Close</span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-stone-200 bg-stone-50 px-6 py-8">
+      <ul class="flex flex-col space-y-5 text-base font-normal text-stone-700">
+        <li>
+          <a href="#about" class="mobile-nav-link block hover:text-stone-900 transition-colors">About</a>
+        </li>
+        <li>
+          <a href="#projects" class="mobile-nav-link block hover:text-stone-900 transition-colors">Projects</a>
+        </li>
+        <li>
+          <a href="#skills" class="mobile-nav-link block hover:text-stone-900 transition-colors">Skills</a>
+        </li>
+        <li>
+          <a href="#contact" class="mobile-nav-link block hover:text-stone-900 transition-colors">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content Container (Sections will be added in subsequent steps) -->
+  <main class="pt-20">
+  </main>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js" defer></script>
+</body>
+</html>
