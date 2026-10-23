@@ -7,6 +7,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const desktopNavLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("main section[id]");
 
+  // 0. Dark Mode Initialization & Toggle
+  const rootHtml = document.documentElement;
+  const themeToggleBtn = document.getElementById("theme-toggle-btn");
+  const themeToggleLabel = document.getElementById("theme-toggle-label");
+
+  const applyTheme = (isDark) => {
+    rootHtml.classList.toggle("dark", isDark);
+    if (themeToggleBtn && themeToggleLabel) {
+      themeToggleBtn.setAttribute("aria-pressed", String(isDark));
+      themeToggleLabel.textContent = isDark ? "Light" : "Dark";
+    }
+  };
+
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const initialDark = savedTheme ? savedTheme === "dark" : prefersDark;
+  applyTheme(initialDark);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const isCurrentlyDark = rootHtml.classList.contains("dark");
+      const nextDark = !isCurrentlyDark;
+      applyTheme(nextDark);
+      localStorage.setItem("theme", nextDark ? "dark" : "light");
+    });
+  }
+
   // 1. Mobile Navigation Drawer Toggle
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener("click", () => {
