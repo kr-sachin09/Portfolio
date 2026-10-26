@@ -1,469 +1,635 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sachin Paswan</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sachin Paswan</title>
 
-  <link rel="icon" type="image/svg+xml" href="./src/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-stone-50 text-stone-900 antialiased selection:bg-stone-900 selection:text-stone-50">
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-stone-50/90 backdrop-blur-sm border-b border-stone-200/80 transition-colors duration-300">
-    <nav class="max-w-6xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between" aria-label="Main Navigation">
-      
-      <a href="#" class="text-lg font-medium tracking-tight text-stone-900 hover:opacity-70 transition-opacity">
-        SACHIN PASWAN
-      </a>
-      <div class="flex items-center space-x-8 md:space-x-10">
-        
-        <ul class="hidden md:flex items-center space-x-10 text-sm font-normal text-stone-600">
+    <link rel="icon" type="image/svg+xml" href="./src/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-stone-50 text-stone-900 antialiased selection:bg-stone-900 selection:text-stone-50"
+  >
+    <header
+      id="site-header"
+      class="fixed top-0 left-0 right-0 z-50 bg-stone-50/90 backdrop-blur-sm border-b border-stone-200/80 transition-colors duration-300"
+    >
+      <nav
+        class="max-w-6xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between"
+        aria-label="Main Navigation"
+      >
+        <a
+          href="#"
+          class="text-lg font-medium tracking-tight text-stone-900 hover:opacity-70 transition-opacity"
+        >
+          SACHIN PASWAN
+        </a>
+        <div class="flex items-center space-x-8 md:space-x-10">
+          <ul
+            class="hidden md:flex items-center space-x-10 text-sm font-normal text-stone-600"
+          >
+            <li>
+              <a
+                href="#about"
+                class="nav-link hover:text-stone-900 transition-colors"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="nav-link hover:text-stone-900 transition-colors"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#skills"
+                class="nav-link hover:text-stone-900 transition-colors"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="nav-link hover:text-stone-900 transition-colors"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <button
+            id="theme-toggle-btn"
+            type="button"
+            class="text-xs uppercase tracking-widest font-medium text-stone-500 hover:text-stone-900 transition-colors focus:outline-none"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+          >
+            <span id="theme-toggle-label">Dark</span>
+          </button>
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            class="md:hidden inline-flex items-center justify-center p-2 text-stone-700 hover:text-stone-900 focus:outline-none"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu"
+          >
+            <span
+              id="menu-icon-open"
+              class="text-xs uppercase tracking-widest font-medium"
+              >Menu</span
+            >
+            <span
+              id="menu-icon-close"
+              class="hidden text-xs uppercase tracking-widest font-medium"
+              >Close</span
+            >
+          </button>
+        </div>
+      </nav>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden border-b border-stone-200 bg-stone-50 px-6 py-8"
+      >
+        <ul
+          class="flex flex-col space-y-5 text-base font-normal text-stone-700"
+        >
           <li>
-            <a href="#about" class="nav-link hover:text-stone-900 transition-colors">About</a>
+            <a
+              href="#about"
+              class="mobile-nav-link block hover:text-stone-900 transition-colors"
+              >About</a
+            >
           </li>
           <li>
-            <a href="#projects" class="nav-link hover:text-stone-900 transition-colors">Projects</a>
+            <a
+              href="#projects"
+              class="mobile-nav-link block hover:text-stone-900 transition-colors"
+              >Projects</a
+            >
           </li>
           <li>
-            <a href="#skills" class="nav-link hover:text-stone-900 transition-colors">Skills</a>
+            <a
+              href="#skills"
+              class="mobile-nav-link block hover:text-stone-900 transition-colors"
+              >Skills</a
+            >
           </li>
           <li>
-            <a href="#contact" class="nav-link hover:text-stone-900 transition-colors">Contact</a>
+            <a
+              href="#contact"
+              class="mobile-nav-link block hover:text-stone-900 transition-colors"
+              >Contact</a
+            >
           </li>
         </ul>
-        <button
-          id="theme-toggle-btn"
-          type="button"
-          class="text-xs uppercase tracking-widest font-medium text-stone-500 hover:text-stone-900 transition-colors focus:outline-none"
-          aria-label="Toggle dark mode"
-          aria-pressed="false"
-        >
-          <span id="theme-toggle-label">Dark</span>
-        </button>
-        <button
-          id="mobile-menu-btn"
-          type="button"
-          class="md:hidden inline-flex items-center justify-center p-2 text-stone-700 hover:text-stone-900 focus:outline-none"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-          aria-label="Toggle navigation menu"
-        >
-          <span id="menu-icon-open" class="text-xs uppercase tracking-widest font-medium">Menu</span>
-          <span id="menu-icon-close" class="hidden text-xs uppercase tracking-widest font-medium">Close</span>
-        </button>
-
       </div>
-    </nav>
-    <div id="mobile-menu" class="hidden md:hidden border-b border-stone-200 bg-stone-50 px-6 py-8">
-      <ul class="flex flex-col space-y-5 text-base font-normal text-stone-700">
-        <li>
-          <a href="#about" class="mobile-nav-link block hover:text-stone-900 transition-colors">About</a>
-        </li>
-        <li>
-          <a href="#projects" class="mobile-nav-link block hover:text-stone-900 transition-colors">Projects</a>
-        </li>
-        <li>
-          <a href="#skills" class="mobile-nav-link block hover:text-stone-900 transition-colors">Skills</a>
-        </li>
-        <li>
-          <a href="#contact" class="mobile-nav-link block hover:text-stone-900 transition-colors">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </header>
-  <main class="pt-20">
-    <section id="hero" class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-36 border-b border-stone-200/80">
-      <div class="max-w-4xl">
-        <p class="text-xs uppercase tracking-widest text-stone-500 mb-6">
-          MERN Stack Developer &mdash; Patna, Bihar
-        </p>
-        <h1 class="font-serif-editorial text-5xl sm:text-6xl md:text-7xl leading-none tracking-tight text-stone-900 mb-8">
-          Turning complex ideas into <em>production-ready</em> web software.
-        </h1>
-        <p class="text-lg md:text-xl text-stone-600 font-light leading-relaxed max-w-2xl mb-12">
-          I architect and build end-to-end web applications with MongoDB, Express, React, and Node.js—combining clean backend APIs with fast, intuitive interfaces.
-        </p>
-        <div class="flex flex-wrap items-center gap-6">
-          <a
-            href="#projects"
-            class="inline-flex items-center px-6 py-3 bg-stone-900 text-stone-50 text-xs uppercase tracking-widest font-medium hover:bg-stone-700 transition-colors"
+    </header>
+    <main class="pt-20">
+      <section
+        id="hero"
+        class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-36 border-b border-stone-200/80"
+      >
+        <div class="max-w-4xl">
+          <p class="text-xs uppercase tracking-widest text-stone-500 mb-6">
+            MERN Stack Developer &mdash; Patna, Bihar
+          </p>
+          <h1
+            class="font-serif-editorial text-5xl sm:text-6xl md:text-7xl leading-none tracking-tight text-stone-900 mb-8"
           >
-            View Selected Work
-          </a>
-          <a
-            href="#contact"
-            class="inline-flex items-center py-3 text-xs uppercase tracking-widest font-medium text-stone-900 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors"
+            Turning complex ideas into <em>production-ready</em> web software.
+          </h1>
+          <p
+            class="text-lg md:text-xl text-stone-600 font-light leading-relaxed max-w-2xl mb-12"
           >
-            Get in Touch
-          </a>
-        </div>
-      </div>
-    </section>
-    <section id="about" class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32 border-b border-stone-200/80">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
-        <div class="md:col-span-4">
-          <span class="block text-xs uppercase tracking-widest text-stone-400 mb-2">About</span>
-          <h2 class="font-serif-editorial text-3xl md:text-4xl text-stone-900">
-            Full-Stack Developer
-          </h2>
-        </div>
-        <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-12 gap-10">
-          <div class="sm:col-span-7 space-y-6 text-stone-600 font-light leading-relaxed">
-            <p class="text-stone-900 text-lg font-normal leading-snug">
-              Aspiring Full-Stack Developer passionate about building modern, responsive, and user-friendly web applications.
-            </p>
-            <p>
-              I am a B.Sc. Computer Science and Data Analytics student at IIT Patna, graduating in 2027. I am passionate about web development and enjoy exploring technologies to build practical solutions to real-world problems.
-            </p>
-            <p>
-              My technical interests include the MERN stack, Python, and database management. I enjoy developing projects, strengthening my programming fundamentals, and continuously improving my development skills through hands-on practice.
-            </p>
-            <dl class="pt-6 border-t border-stone-200 grid grid-cols-2 gap-6 text-sm">
-              <div>
-                <dt class="text-xs uppercase tracking-widest text-stone-400 mb-1">Experience</dt>
-                <dd class="text-stone-900 font-normal">Student Developer | Fresher</dd>
-              </div>
-              <div>
-                <dt class="text-xs uppercase tracking-widest text-stone-400 mb-1">Availability</dt>
-                <dd class="text-stone-900 font-normal">Focused on Skill Development</dd>
-              </div>
-            </dl>
-          </div>
-          <div class="sm:col-span-5">
-            <figure class="aspect-[4/5] w-full bg-stone-100 border border-stone-200 overflow-hidden relative">
-              <img src="./src/photo_im.png" alt="Portrait Placeholder" class="empty-img-placeholder w-full h-full object-cover">
-            </figure>
-            <figcaption class="mt-2 text-xs text-stone-400 tracking-wide">
-              Sachin Paswan
-            </figcaption>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <section id="projects" class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32 border-b border-stone-200/80">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-end mb-16">
-        <div class="md:col-span-4">
-          <span class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Selected Work</span>
-          <h2 class="font-serif-editorial text-3xl md:text-4xl text-stone-900">
-            My Projects
-          </h2>
-        </div>
-        <div class="md:col-span-8 md:text-right">
-          <p class="text-sm text-stone-500 font-light">
-            A collection of projects built through learning, experimentation, and hands-on development.
+            I architect and build end-to-end web applications with MongoDB,
+            Express, React, and Node.js—combining clean backend APIs with fast,
+            intuitive interfaces.
           </p>
+          <div class="flex flex-wrap items-center gap-6">
+            <a
+              href="#projects"
+              class="inline-flex items-center px-6 py-3 bg-stone-900 text-stone-50 text-xs uppercase tracking-widest font-medium hover:bg-stone-700 transition-colors"
+            >
+              View Selected Work
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex items-center py-3 text-xs uppercase tracking-widest font-medium text-stone-900 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors"
+            >
+              Get in Touch
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
-        <article class="project-card group flex flex-col">
-          <figure class="aspect-[16/10] w-full bg-stone-100 border border-stone-200 overflow-hidden mb-6 relative">
-            <img src="./src/backend1.png" alt="Project 1 Cover" class="empty-img-placeholder w-full h-full object-cover">
-          </figure>
-          <div class="flex items-center justify-between text-xs uppercase tracking-widest text-stone-400 mb-3">
-            <span>Backend</span>
-            <span>Sep 2026</span>
-          </div>
-          <h3 class="font-serif-editorial text-2xl md:text-3xl text-stone-900 mb-3">
-            Project Management System
-          </h3>
-          <p class="text-sm text-stone-600 font-light leading-relaxed mb-6 flex-grow">
-            Project management system is a RESTful API service designed to support collaborative project management. The system enables teams to organize projects, manage tasks with subtasks, maintain project notes, and handle user authentication with role-based access control. 
-          </p>
-          <div class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs">
-            <ul class="flex flex-wrap gap-3 text-stone-500" aria-label="Project 1 Technologies">
-              <li>Node.Js</li>
-              <li>Express.Js</li>
-              <li>MongoDB Atlas</li>
-            </ul>
-            <div class="flex items-center space-x-4 uppercase tracking-widest font-medium text-stone-900">
-              <a href="https://github.com/kr-sachin09/Project-management-system-Backend-" class="project-link hover:text-stone-500 transition-colors">Github</a>
-            </div>
-          </div>
-        </article>
-        <article class="project-card group flex flex-col">
-          <figure class="aspect-[16/10] w-full bg-stone-100 border border-stone-200 overflow-hidden mb-6 relative">
-            <img src="./src/backend2.png" alt="Project 2 Cover" class="empty-img-placeholder w-full h-full object-cover">
-          </figure>
-          <div class="flex items-center justify-between text-xs uppercase tracking-widest text-stone-400 mb-3">
-            <span>Backend</span>
-            <span>Oct 2026</span>
-          </div>
-          <h3 class="font-serif-editorial text-2xl md:text-3xl text-stone-900 mb-3">
-            Video Streaming Palform
-          </h3>
-          <p class="text-sm text-stone-600 font-light leading-relaxed mb-6 flex-grow">
-            A YouTube-like video hosting backend built with Node.js, Express.js, and MongoDB, featuring authentication, video uploads, likes, comments, and subscriptions, secured with JWT, access tokens, refresh tokens, and bcrypt.
-
-          </p>
-          <div class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs">
-            <ul class="flex flex-wrap gap-3 text-stone-500" aria-label="Project 2 Technologies">
-              <li>Node.Js</li>
-              <li>Express.Js</li>
-              <li>MongoDB Atlas</li>
-            </ul>
-            <div class="flex items-center space-x-4 uppercase tracking-widest font-medium text-stone-900">
-              <a href="https://github.com/kr-sachin09/Video-Streaming-Platform" class="project-link hover:text-stone-500 transition-colors">Github</a>
-            </div>
-          </div>
-        </article>
-        <article class="project-card group flex flex-col">
-          <figure class="aspect-[16/10] w-full bg-stone-100 border border-stone-200 overflow-hidden mb-6 relative">
-            <img src="./src/quiz.png" alt="Project 3 Cover" class="empty-img-placeholder w-full h-full object-cover">
-          </figure>
-          <div class="flex items-center justify-between text-xs uppercase tracking-widest text-stone-400 mb-3">
-            <span>Fontend</span>
-            <span>Aug 2026</span>
-          </div>
-          <h3 class="font-serif-editorial text-2xl md:text-3xl text-stone-900 mb-3">
-            Quiz System
-          </h3>
-          <p class="text-sm text-stone-600 font-light leading-relaxed mb-6 flex-grow">
-            A quiz system
-          </p>
-          <div class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs">
-            <ul class="flex flex-wrap gap-3 text-stone-500" aria-label="Project 3 Technologies">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
-            <div class="flex items-center space-x-4 uppercase tracking-widest font-medium text-stone-900">
-              <a href="https://kr-sachin09.github.io/Quiz-System/" class="project-link hover:text-stone-500 transition-colors">Live</a>
-              <a href="https://github.com/kr-sachin09/Quiz-System" class="project-link hover:text-stone-500 transition-colors">Github</a>
-            </div>
-          </div>
-        </article>
-        <article class="project-card group flex flex-col">
-          <figure class="aspect-[16/10] w-full bg-stone-100 border border-stone-200 overflow-hidden mb-6 relative">
-            <img src="./src/weather.png" alt="Project 4 Cover" class="empty-img-placeholder w-full h-full object-cover">
-          </figure>
-          <div class="flex items-center justify-between text-xs uppercase tracking-widest text-stone-400 mb-3">
-            <span>Frontend</span>
-            <span>Aug 2026</span>
-          </div>
-          <h3 class="font-serif-editorial text-2xl md:text-3xl text-stone-900 mb-3">
-            Weather Info
-          </h3>
-          <p class="text-sm text-stone-600 font-light leading-relaxed mb-6 flex-grow">
-            A clean and interactive web application that allows users to check the current weather conditions of any city around the world. This project fetches live data using the OpenWeather API and updates the UI dynamically.
-          </p>
-          <div class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs">
-            <ul class="flex flex-wrap gap-3 text-stone-500" aria-label="Project 4 Technologies">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
-            <div class="flex items-center space-x-4 uppercase tracking-widest font-medium text-stone-900">
-              <a href="https://kr-sachin09.github.io/Weather-Info/" class="project-link hover:text-stone-500 transition-colors">Live</a>
-              <a href="https://github.com/kr-sachin09/Weather-Info" class="project-link hover:text-stone-500 transition-colors">Github</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-    <section id="skills" class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32 border-b border-stone-200/80">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
-
-        <div class="md:col-span-4">
-          <span class="block text-xs uppercase tracking-widest text-stone-400 mb-2">03 / Capabilities</span>
-          <h2 class="font-serif-editorial text-3xl md:text-4xl text-stone-900">
-            Skills
-          </h2>
-        </div>
-        <div class="md:col-span-8 divide-y divide-stone-200 border-t border-b border-stone-200">
-          
-          <!-- Skill Category Group 1 -->
-          <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline">
-            <h3 class="sm:col-span-4 text-xs uppercase tracking-widest text-stone-500 font-medium">
-              [Skill Category 1]
-            </h3>
-            <ul class="sm:col-span-8 grid grid-cols-2 gap-y-3 gap-x-6 text-sm text-stone-800 font-light">
-              <li class="skill-item">[Skill Placeholder]</li>
-              <li class="skill-item">[Skill Placeholder]</li>
-              <li class="skill-item">[Skill Placeholder]</li>
-              <li class="skill-item">[Skill Placeholder]</li>
-            </ul>
-          </div>
-
-          <!-- Skill Category Group 2 -->
-          <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline">
-            <h3 class="sm:col-span-4 text-xs uppercase tracking-widest text-stone-500 font-medium">
-              [Skill Category 2]
-            </h3>
-            <ul class="sm:col-span-8 grid grid-cols-2 gap-y-3 gap-x-6 text-sm text-stone-800 font-light">
-              <li class="skill-item">[Skill Placeholder]</li>
-              <li class="skill-item">[Skill Placeholder]</li>
-              <li class="skill-item">[Skill Placeholder]</li>
-              <li class="skill-item">[Skill Placeholder]</li>
-            </ul>
-          </div>
-
-          <!-- Skill Category Group 3 -->
-          <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline">
-            <h3 class="sm:col-span-4 text-xs uppercase tracking-widest text-stone-500 font-medium">
-              [Skill Category 3]
-            </h3>
-            <ul class="sm:col-span-8 grid grid-cols-2 gap-y-3 gap-x-6 text-sm text-stone-800 font-light">
-              <li class="skill-item">[Skill Placeholder]</li>
-              <li class="skill-item">[Skill Placeholder]</li>
-              <li class="skill-item">[Skill Placeholder]</li>
-              <li class="skill-item">[Skill Placeholder]</li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-    <!-- Contact Section -->
-    <section id="contact" class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
-        
-        <!-- Section Index, Heading & Direct Links -->
-        <div class="md:col-span-5 space-y-8">
-          <div>
-            <span class="block text-xs uppercase tracking-widest text-stone-400 mb-2">04 / Contact</span>
-            <h2 class="font-serif-editorial text-3xl md:text-4xl text-stone-900 mb-4">
-              [Insert Contact Heading]
+      </section>
+      <section
+        id="about"
+        class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32 border-b border-stone-200/80"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start"
+        >
+          <div class="md:col-span-4">
+            <span
+              class="block text-xs uppercase tracking-widest text-stone-400 mb-2"
+              >About</span
+            >
+            <h2
+              class="font-serif-editorial text-3xl md:text-4xl text-stone-900"
+            >
+              Full-Stack Developer
             </h2>
-            <p class="text-sm text-stone-600 font-light leading-relaxed max-w-sm">
-              [Short Description]
+          </div>
+          <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-12 gap-10">
+            <div
+              class="sm:col-span-7 space-y-6 text-stone-600 font-light leading-relaxed"
+            >
+              <p class="text-stone-900 text-lg font-normal leading-snug">
+                Aspiring Full-Stack Developer passionate about building modern,
+                responsive, and user-friendly web applications.
+              </p>
+              <p>
+                I am a B.Sc. Computer Science and Data Analytics student at IIT
+                Patna, graduating in 2027. I am passionate about web development
+                and enjoy exploring technologies to build practical solutions to
+                real-world problems.
+              </p>
+              <p>
+                My technical interests include the MERN stack, Python, and
+                database management. I enjoy developing projects, strengthening
+                my programming fundamentals, and continuously improving my
+                development skills through hands-on practice.
+              </p>
+              <dl
+                class="pt-6 border-t border-stone-200 grid grid-cols-2 gap-6 text-sm"
+              >
+                <div>
+                  <dt
+                    class="text-xs uppercase tracking-widest text-stone-400 mb-1"
+                  >
+                    Experience
+                  </dt>
+                  <dd class="text-stone-900 font-normal">
+                    Student Developer | Fresher
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    class="text-xs uppercase tracking-widest text-stone-400 mb-1"
+                  >
+                    Availability
+                  </dt>
+                  <dd class="text-stone-900 font-normal">
+                    Focused on Skill Development
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <div class="sm:col-span-5">
+              <figure
+                class="aspect-[4/5] w-full bg-stone-100 border border-stone-200 overflow-hidden relative"
+              >
+                <img
+                  src="./src/photo_im.png"
+                  alt="Portrait Placeholder"
+                  class="empty-img-placeholder w-full h-full object-cover"
+                />
+              </figure>
+              <figcaption class="mt-2 text-xs text-stone-400 tracking-wide">
+                Sachin Paswan
+              </figcaption>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="projects"
+        class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32 border-b border-stone-200/80"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-end mb-16"
+        >
+          <div class="md:col-span-4">
+            <span
+              class="block text-xs uppercase tracking-widest text-stone-400 mb-2"
+              >Selected Work</span
+            >
+            <h2
+              class="font-serif-editorial text-3xl md:text-4xl text-stone-900"
+            >
+              My Projects
+            </h2>
+          </div>
+          <div class="md:col-span-8 md:text-right">
+            <p class="text-sm text-stone-500 font-light">
+              A collection of projects built through learning, experimentation,
+              and hands-on development.
             </p>
           </div>
-
-          <div class="pt-6 border-t border-stone-200 space-y-4 text-sm">
-            <div>
-              <span class="block text-xs uppercase tracking-widest text-stone-400 mb-1">Direct Email</span>
-              <a href="mailto:" class="text-stone-900 hover:text-stone-500 transition-colors">
-                [Insert Email Address]
-              </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
+          <article class="project-card group flex flex-col">
+            <figure
+              class="aspect-[16/10] w-full bg-stone-100 border border-stone-200 overflow-hidden mb-6 relative"
+            >
+              <img
+                src="./src/backend1.png"
+                alt="Project 1 Cover"
+                class="empty-img-placeholder w-full h-full object-cover"
+              />
+            </figure>
+            <div
+              class="flex items-center justify-between text-xs uppercase tracking-widest text-stone-400 mb-3"
+            >
+              <span>Backend</span>
+              <span>Sep 2026</span>
             </div>
-            <div>
-              <span class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Profiles</span>
-              <ul class="flex flex-wrap gap-6 text-xs uppercase tracking-widest text-stone-700">
-                <li><a href="#" class="hover:text-stone-900 transition-colors">[Social Link 1]</a></li>
-                <li><a href="#" class="hover:text-stone-900 transition-colors">[Social Link 2]</a></li>
-                <li><a href="#" class="hover:text-stone-900 transition-colors">[Social Link 3]</a></li>
+            <h3
+              class="font-serif-editorial text-2xl md:text-3xl text-stone-900 mb-3"
+            >
+              Project Management System
+            </h3>
+            <p
+              class="text-sm text-stone-600 font-light leading-relaxed mb-6 flex-grow"
+            >
+              Project management system is a RESTful API service designed to
+              support collaborative project management. The system enables teams
+              to organize projects, manage tasks with subtasks, maintain project
+              notes, and handle user authentication with role-based access
+              control.
+            </p>
+            <div
+              class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs"
+            >
+              <ul
+                class="flex flex-wrap gap-3 text-stone-500"
+                aria-label="Project 1 Technologies"
+              >
+                <li>Node.Js</li>
+                <li>Express.Js</li>
+                <li>MongoDB Atlas</li>
+              </ul>
+              <div
+                class="flex items-center space-x-4 uppercase tracking-widest font-medium text-stone-900"
+              >
+                <a
+                  href="https://github.com/kr-sachin09/Project-management-system-Backend-"
+                  class="project-link hover:text-stone-500 transition-colors"
+                  >Github</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="project-card group flex flex-col">
+            <figure
+              class="aspect-[16/10] w-full bg-stone-100 border border-stone-200 overflow-hidden mb-6 relative"
+            >
+              <img
+                src="./src/backend2.png"
+                alt="Project 2 Cover"
+                class="empty-img-placeholder w-full h-full object-cover"
+              />
+            </figure>
+            <div
+              class="flex items-center justify-between text-xs uppercase tracking-widest text-stone-400 mb-3"
+            >
+              <span>Backend</span>
+              <span>Oct 2026</span>
+            </div>
+            <h3
+              class="font-serif-editorial text-2xl md:text-3xl text-stone-900 mb-3"
+            >
+              Video Streaming Palform
+            </h3>
+            <p
+              class="text-sm text-stone-600 font-light leading-relaxed mb-6 flex-grow"
+            >
+              A YouTube-like video hosting backend built with Node.js,
+              Express.js, and MongoDB, featuring authentication, video uploads,
+              likes, comments, and subscriptions, secured with JWT, access
+              tokens, refresh tokens, and bcrypt.
+            </p>
+            <div
+              class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs"
+            >
+              <ul
+                class="flex flex-wrap gap-3 text-stone-500"
+                aria-label="Project 2 Technologies"
+              >
+                <li>Node.Js</li>
+                <li>Express.Js</li>
+                <li>MongoDB Atlas</li>
+              </ul>
+              <div
+                class="flex items-center space-x-4 uppercase tracking-widest font-medium text-stone-900"
+              >
+                <a
+                  href="https://github.com/kr-sachin09/Video-Streaming-Platform"
+                  class="project-link hover:text-stone-500 transition-colors"
+                  >Github</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="project-card group flex flex-col">
+            <figure
+              class="aspect-[16/10] w-full bg-stone-100 border border-stone-200 overflow-hidden mb-6 relative"
+            >
+              <img
+                src="./src/quiz.png"
+                alt="Project 3 Cover"
+                class="empty-img-placeholder w-full h-full object-cover"
+              />
+            </figure>
+            <div
+              class="flex items-center justify-between text-xs uppercase tracking-widest text-stone-400 mb-3"
+            >
+              <span>Fontend</span>
+              <span>Aug 2026</span>
+            </div>
+            <h3
+              class="font-serif-editorial text-2xl md:text-3xl text-stone-900 mb-3"
+            >
+              Quiz System
+            </h3>
+            <p
+              class="text-sm text-stone-600 font-light leading-relaxed mb-6 flex-grow"
+            >
+              A quiz system
+            </p>
+            <div
+              class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs"
+            >
+              <ul
+                class="flex flex-wrap gap-3 text-stone-500"
+                aria-label="Project 3 Technologies"
+              >
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <div
+                class="flex items-center space-x-4 uppercase tracking-widest font-medium text-stone-900"
+              >
+                <a
+                  href="https://kr-sachin09.github.io/Quiz-System/"
+                  class="project-link hover:text-stone-500 transition-colors"
+                  >Live</a
+                >
+                <a
+                  href="https://github.com/kr-sachin09/Quiz-System"
+                  class="project-link hover:text-stone-500 transition-colors"
+                  >Github</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="project-card group flex flex-col">
+            <figure
+              class="aspect-[16/10] w-full bg-stone-100 border border-stone-200 overflow-hidden mb-6 relative"
+            >
+              <img
+                src="./src/weather.png"
+                alt="Project 4 Cover"
+                class="empty-img-placeholder w-full h-full object-cover"
+              />
+            </figure>
+            <div
+              class="flex items-center justify-between text-xs uppercase tracking-widest text-stone-400 mb-3"
+            >
+              <span>Frontend</span>
+              <span>Aug 2026</span>
+            </div>
+            <h3
+              class="font-serif-editorial text-2xl md:text-3xl text-stone-900 mb-3"
+            >
+              Weather Info
+            </h3>
+            <p
+              class="text-sm text-stone-600 font-light leading-relaxed mb-6 flex-grow"
+            >
+              A clean and interactive web application that allows users to check
+              the current weather conditions of any city around the world. This
+              project fetches live data using the OpenWeather API and updates
+              the UI dynamically.
+            </p>
+            <div
+              class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs"
+            >
+              <ul
+                class="flex flex-wrap gap-3 text-stone-500"
+                aria-label="Project 4 Technologies"
+              >
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <div
+                class="flex items-center space-x-4 uppercase tracking-widest font-medium text-stone-900"
+              >
+                <a
+                  href="https://kr-sachin09.github.io/Weather-Info/"
+                  class="project-link hover:text-stone-500 transition-colors"
+                  >Live</a
+                >
+                <a
+                  href="https://github.com/kr-sachin09/Weather-Info"
+                  class="project-link hover:text-stone-500 transition-colors"
+                  >Github</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section
+        id="skills"
+        class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32 border-b border-stone-200/80"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start"
+        >
+          <div class="md:col-span-4">
+            <h2
+              class="font-serif-editorial text-3xl md:text-4xl text-stone-900"
+            >
+              Skills
+            </h2>
+          </div>
+          <div
+            class="md:col-span-8 divide-y divide-stone-200 border-t border-b border-stone-200"
+          >
+            <div
+              class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline"
+            >
+              <h3
+                class="sm:col-span-4 text-xs uppercase tracking-widest text-stone-500 font-medium"
+              >
+                Languages
+              </h3>
+              <ul
+                class="sm:col-span-8 grid grid-cols-2 gap-y-3 gap-x-6 text-sm text-stone-800 font-light"
+              >
+                <li class="skill-item">C++</li>
+                <li class="skill-item">Python</li>
+                <li class="skill-item">JavaScript</li>
+              </ul>
+            </div>
+            <div
+              class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline"
+            >
+              <h3
+                class="sm:col-span-4 text-xs uppercase tracking-widest text-stone-500 font-medium"
+              >
+                Frontend
+              </h3>
+              <ul
+                class="sm:col-span-8 grid grid-cols-2 gap-y-3 gap-x-6 text-sm text-stone-800 font-light"
+              >
+                <li class="skill-item">HTML</li>
+                <li class="skill-item">CSS</li>
+                <li class="skill-item">Tailwind CSS</li>
+                <li class="skill-item">React.js</li>
+              </ul>
+            </div>
+            <div
+              class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline"
+            >
+              <h3
+                class="sm:col-span-4 text-xs uppercase tracking-widest text-stone-500 font-medium"
+              >
+                Backend
+              </h3>
+              <ul
+                class="sm:col-span-8 grid grid-cols-2 gap-y-3 gap-x-6 text-sm text-stone-800 font-light"
+              >
+                <li class="skill-item">Node.js</li>
+                <li class="skill-item">Express.js</li>
+                <li class="skill-item">MongoDB</li>
               </ul>
             </div>
           </div>
         </div>
-
-        <!-- Functional UI Contact Form (No Backend) -->
-        <div class="md:col-span-7">
-          <form id="contact-form" class="space-y-8" novalidate>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <!-- Name Field -->
-              <div>
-                <label for="name" class="block text-xs uppercase tracking-widest text-stone-500 mb-2">
-                  Name <span class="text-stone-400">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="[Insert Placeholder Name]"
-                  class="form-input w-full bg-transparent py-3 text-sm text-stone-900 placeholder-stone-400 focus:outline-none"
-                >
-                <p id="name-error" class="form-error hidden mt-2 text-xs text-red-700">
-                  Please enter your name.
-                </p>
-              </div>
-
-              <!-- Email Field -->
-              <div>
-                <label for="email" class="block text-xs uppercase tracking-widest text-stone-500 mb-2">
-                  Email <span class="text-stone-400">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="[Insert Placeholder Email]"
-                  class="form-input w-full bg-transparent py-3 text-sm text-stone-900 placeholder-stone-400 focus:outline-none"
-                >
-                <p id="email-error" class="form-error hidden mt-2 text-xs text-red-700">
-                  Please enter a valid email address.
-                </p>
-              </div>
-            </div>
-
-            <!-- Subject Field -->
+      </section>
+      <section
+        id="contact"
+        class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start"
+        >
+          <div class="md:col-span-5 space-y-8">
             <div>
-              <label for="subject" class="block text-xs uppercase tracking-widest text-stone-500 mb-2">
-                Subject
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="[Insert Placeholder Subject]"
-                class="form-input w-full bg-transparent py-3 text-sm text-stone-900 placeholder-stone-400 focus:outline-none"
+              <h2
+                class="font-serif-editorial text-3xl md:text-4xl text-stone-900 mb-4"
               >
+                Contact
+              </h2>
             </div>
 
-            <!-- Message Field -->
-            <div>
-              <label for="message" class="block text-xs uppercase tracking-widest text-stone-500 mb-2">
-                Message <span class="text-stone-400">*</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-                placeholder="[Insert Placeholder Message]"
-                class="form-input w-full bg-transparent py-3 text-sm text-stone-900 placeholder-stone-400 resize-y focus:outline-none"
-              ></textarea>
-              <p id="message-error" class="form-error hidden mt-2 text-xs text-red-700">
-                Please enter a message before sending.
-              </p>
+            <div class="pt-6 border-t border-stone-200 space-y-4 text-sm">
+              <div>
+                <span
+                  class="block text-xs uppercase tracking-widest text-stone-400 mb-1"
+                  >Direct Email</span
+                >
+                <a
+                  href="mailto:sachinpaswan2004@gmail.com"
+                  class="text-stone-900 hover:text-stone-500 transition-colors"
+                >
+                  Email
+                </a>
+              </div>
+              <div>
+                <span
+                  class="block text-xs uppercase tracking-widest text-stone-400 mb-2"
+                  >Profiles</span
+                >
+                <ul
+                  class="flex flex-wrap gap-6 text-xs uppercase tracking-widest text-stone-700"
+                >
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/sachin-kumar-984793265/"
+                      class="hover:text-stone-900 transition-colors"
+                      >Linkedin</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/kr-sachin09/"
+                      class="hover:text-stone-900 transition-colors"
+                      >Github</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
-
-            <!-- Submit Button & Feedback Banner -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
-              <button
-                type="submit"
-                id="submit-btn"
-                class="inline-flex items-center justify-center px-8 py-3.5 bg-stone-900 text-stone-50 text-xs uppercase tracking-widest font-medium hover:bg-stone-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Send Message
-              </button>
-
-              <p
-                id="form-status"
-                role="status"
-                aria-live="polite"
-                class="hidden text-xs tracking-wide text-stone-700"
-              ></p>
-            </div>
-
-          </form>
+          </div>
         </div>
-
+      </section>
+    </main>
+    <footer class="border-t border-stone-200/80 bg-stone-50">
+      <div
+        class="max-w-6xl mx-auto px-6 md:px-12 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500"
+      >
+        <a
+          href="#"
+          class="uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors"
+        >
+          Back to Top &uarr;
+        </a>
       </div>
-    </section>
-  </main>
-  <footer class="border-t border-stone-200/80 bg-stone-50">
-    <div class="max-w-6xl mx-auto px-6 md:px-12 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
-      <p>
-        &copy; <span id="current-year">[Year]</span> [Insert Your Name]. All rights reserved.
-      </p>
-      <a href="#" class="uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors">
-        Back to Top &uarr;
-      </a>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Custom JavaScript -->
-  <script src="script.js" defer></script>
-</body>
+    <script src="script.js" defer></script>
+  </body>
 </html>
